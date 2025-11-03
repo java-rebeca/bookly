@@ -1,6 +1,6 @@
 # Trabalho em grupo
 
-## Alunas:
+## 💫Alunas:
 Isabela Santos,
 Maria Clara Fonseca, 
 Maria Eduarda Tamancoldi,
