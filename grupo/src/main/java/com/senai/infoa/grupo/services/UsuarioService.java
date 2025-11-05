@@ -1,7 +1,5 @@
 package com.senai.infoa.grupo.services;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,39 +11,18 @@ public class UsuarioService {
 
     @Autowired 
     private UsuarioRepository usuarioRepository;
-    
-    public Long contador() {
-        return usuarioRepository.count();
-    }
 
+    public String login(String cpf, String senha){
+        Usuario usuario = usuarioRepository.findByCpf(cpf);
+            if(usuario != null && senha.equals(usuario.getSenha())){
+            return "Login efetuado com sucesso!";
+            }
+            return "Falha ao realizar login";
+    }
+    
     public Usuario salvar(Usuario usuario, String confSenha) {
         if(usuario.getSenha().equals(confSenha)){
         return usuarioRepository.save(usuario);
-        }
-        return null;
-    }
-
-    public boolean deletar(Integer id) {
-        Usuario usuario = usuarioRepository.findById(id).get();
-        if(usuario != null) {
-            usuarioRepository.deleteById(id);
-            return true;
-        }
-        return false;
-    }
-    
-    public Usuario buscarPorId(Integer id) {
-        return usuarioRepository.findById(id).get();
-    }
-
-    public List<Usuario> listarTodos() {
-        return usuarioRepository.findAll();
-    }
-
-    public Usuario atualizar(Usuario usuario, Integer id) {
-        if (usuario != null) {
-            usuario.setId(id); 
-            return usuarioRepository.save(usuario); 
         }
         return null;
     }

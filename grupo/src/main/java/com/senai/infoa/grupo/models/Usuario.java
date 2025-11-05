@@ -32,6 +32,8 @@ public class Usuario {
     @Column(name="senha")
     private String senha;
 
+    public Usuario() {}
+
     public Usuario(String nomeCompleto, String email, String cpf ,LocalDate dataNascimento, String senha){
         this.nomeCompleto = nomeCompleto;
         this.dataNascimento = dataNascimento;
@@ -56,7 +58,6 @@ public class Usuario {
     public String getSenha() {
         return senha;
     }
-
 
     public int getId() {
         return id;
