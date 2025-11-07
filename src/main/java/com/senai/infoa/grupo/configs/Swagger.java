@@ -10,7 +10,7 @@ import io.swagger.v3.oas.annotations.info.Info;
     info = @Info(
         title = "Exemplo API",
         version = "1.0",
-        description = "API para o sistema Exemplo"
+        description = "Alunas: Isabela Santos, Maria Clara Fonseca, Maria Eduarda Tamancoldi, Rebeca Mendes."
     )
 )
 public class Swagger {
